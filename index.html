@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .stileAnto {
+            color: red;
+            background-color: gray;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+     
+    <button id="bottone" class="prova">Bottone</button>
+    <div class="prova"></div>
+    <span class="prova"></span>
+    
+    <script>
+        /* prendere elementi */
+        let x = document.getElementById('bottone');
+
+        let y = document.querySelector('button');
+        let z = document.querySelector('#bottone');
+        let k = document.querySelector('.prova');
+
+        let w = document.querySelectorAll('.prova');
+        /* console.log("w: ", w); */
+        let j = document.getElementsByClassName('prova');
+        /* console.log("j:" , j[2]); */
+        
+        /* creare nuovi nodi */
+        const div = document.querySelector('div');
+        const paragrafo = document.createElement('p');
+        paragrafo.textContent = ' elemento creato dinamicamente.';
+        div.appendChild(paragrafo);
+        /* spiegazione: vado a prendere il div non usando nessuna classe o id
+        perche è unico, vado a creare un elemento dinamicamente (createElement) dopodichè
+        vado ad aggiungerci il contenuto (textContent). aggiungo il contenuto e poi con una stringa
+        e vado a scrivere che all ' interno del div aggiungo( appendChild) la constante <paragrafo> */
+        
+        const extraTesto = document.createTextNode(' altro testo aggiunto come node');
+        paragrafo.appendChild(extraTesto);
+
+        /* spostare e rimuovere nodi */
+
+        /* document.body.appendChild(paragrafo); vado a spostare il p dal div a fuori div*/
+        /* paragrafo.removeChild(extraTesto); vado a rimuovere l' extratesto che ho creato prima */
+        /* extratesto.remove(); posso toglierlo anche cosi */
+
+        /* manipolare stili */
+      
+        /*paragrafo.style.color = 'red';
+          paragrafo.style.background = 'black';
+          paragrafo.style.padding = '10px';
+          paragrafo.style.textAlign = 'center'; 
+        (qui l ho fatto tutto a mano ed è codice rindondante)
+        */
+
+         /* aggiungere attributi */
+         paragrafo.setAttribute('class', 'stileAnto');
+         paragrafo.setAttribute('data-value', 'ciao');
+         console.log(paragrafo.getAttribute('data-value'));
+         /* come settare meglio uno stile ad un elemento  */
+
+    </script>
+
+
+
+
+
+
+
+</body>
+</html>
